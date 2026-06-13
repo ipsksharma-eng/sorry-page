@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Sorry! 🥺</title>
+    <title>Galti Ho Gayi 🥺 - Pleading Doggy Edition</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #e3f2fd; /* Light blue background for a calming effect */
+            background-color: #fef8f9; /* Sweet creamy background */
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow: hidden;
@@ -20,49 +20,50 @@
             position: relative;
         }
         img {
-            width: 220px;
+            width: 250px; /* Thoda bada for doggy sweetness */
             border-radius: 10px;
         }
         h2 {
-            color: #333;
+            color: #444;
             margin-top: 15px;
-            font-size: 24px;
+            font-size: 22px;
+            margin-bottom: 30px; /* Space for buttons */
         }
         .buttons {
-            margin-top: 20px;
             position: relative;
             height: 50px;
         }
         button {
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-size: 16px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             color: white;
             font-weight: bold;
         }
         #yesBtn {
-            background-color: #4caf50;
-            margin-right: 15px;
+            background-color: #ff9800; /* Warm orange */
+            margin-right: 20px;
         }
         #noBtn {
-            background-color: #f44336;
+            background-color: #9e9e9e; /* Gentle grey */
             position: absolute;
-            transition: 0.2s; /* Smooth running away effect */
+            transition: 0.15s ease-out; /* Super snappy movement like original video */
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Cute Crying/Sad Cat GIF -->
-        <img id="image" src="https://media.tenor.com/T_7kM_M08jMAAAAi/peach-cat-crying.gif" alt="Sad GIF">
-        <h2 id="question">Mujhe maaf kar do na please? 🥺</h2>
+        <!-- Cute Pleading/Sad Doggy GIF -->
+        <img id="image" src="https://media.tenor.com/b9UaH8b3XmAAAAAi/pouting-pout.gif" alt="Pleading Doggy">
+        <h2 id="question">Sacchi sorry! Maaf kar do na please? 🥺❤️</h2>
         
         <div class="buttons">
-            <button id="yesBtn" onclick="sayYes()">Yes, Maaf kiya</button>
-            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">No</button>
+            <button id="yesBtn" onclick="sayYes()">Okay, Maaf Kiya!</button>
+            <!-- Original video vibe movement on No button -->
+            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">Nahi!</button>
         </div>
     </div>
 
@@ -72,39 +73,39 @@
         const image = document.getElementById('image');
         const yesBtn = document.getElementById('yesBtn');
 
-        // Cute pleading texts when they hover over 'No'
+        // Dialogues updated for more pleading and original video vibe
         const noTexts = [
-            "Aise mat karo, maan jao na! 😭", 
-            "Ek aakhiri chance de do? 🥺", 
-            "Pakka aage se aisi galti nahi hogi! 🙈", 
-            "Tum naraz rehte ho toh accha nahi lagta... 💔",
-            "Please please please! 🙏",
-            "Mera pyara baccha, maaf kar do! 😿"
+            "Aise mat kaho, please! 😭", 
+            "Galti sabse hoti hai... 🙏", 
+            "Maan jao, ek chance de do? 🥺", 
+            "Tum naraz rahogi toh main ro dunga! 😿",
+            "Mera pyara baccha, maaf kar do! ❤️",
+            "Look at my puppy eyes! Ooo 🥺"
         ];
         let noCount = 0;
 
         function moveNo() {
             // Randomly position the 'No' button
+            // Original video had rapid, chaotic movement, achieved with small transition time and random offsets
             const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100) - (window.innerWidth / 2) + 50;
             const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100) - (window.innerHeight / 2) + 50;
             
             noBtn.style.transform = `translate(${x}px, ${y}px)`;
             
-            // Change the text to next pleading message
+            // Change the text and sad doggy GIF is already set initially
             if (noCount < noTexts.length) {
                 question.innerText = noTexts[noCount];
                 noCount++;
             } else {
-                // Reset to start if all messages are shown
-                noCount = 0;
+                noCount = 0; // Reset if all shown
             }
         }
 
         function sayYes() {
-            // Final happy screen when they click "Yes"
-            question.innerText = "Yayyy! Thank you so much! I love you! 🥰❤️";
-            // Cute hugging/happy GIF
-            image.src = "https://media.tenor.com/12_m_M_hJZEAAAAi/peach-cat-hug.gif";
+            // Final success screen when they click "Okay, Maaf Kiya!"
+            question.innerText = "Yayyy! Tu toh bohot accha hai/hai, love ya! 🥰💖";
+            // Cute happy doggy licking screen GIF
+            image.src = "https://media.tenor.com/G55q0I_vU1sAAAAi/lick-face.gif";
             noBtn.style.display = "none";
             yesBtn.style.display = "none";
         }
