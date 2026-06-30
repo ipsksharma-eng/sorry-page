@@ -1380,7 +1380,7 @@ def cmd_start(msg):
 
     msg_text = (
         f"Hello *{msg.from_user.first_name or 'there'}* 🌟!\n\n"
-        f"Welcome to **LAKSHYA** 🎯\n"
+        f"Welcome to **QuizBot-Pro** 🎯\n"
         f"Your BPSC preparation dashboard is ready. "
         f"Tap the button below to view your Live Rank and Progress!"
     )
